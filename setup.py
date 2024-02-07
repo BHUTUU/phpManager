@@ -1,4 +1,4 @@
-import os, requests,subprocess, sys
+import os, requests, sys
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 import zipfile
@@ -85,5 +85,5 @@ if os.name == 'nt':
                 None, "runas", sys.executable, " ".join(sys.argv), None, 1
             )
     run_as_admin()
-elif sys.name == "GNU/Linux" or sys.name == "posix":
-    os.system("sudo apt install php -y || printf 'Install php manually!\n'")
+elif os.name == "GNU/Linux" or os.name == "posix":
+    os.system("apt install php -y || printf 'Install php manually!\n'")

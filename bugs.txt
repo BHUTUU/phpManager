@@ -1,5 +1,4 @@
 need to check the pid of the php server that may be ran by the user between two different server by this 
 program, this will effet the pid extraction of the server that is running by this program. --fixed
-
-
 if an external php server is ignited by the use at the same time, this will affect the newly checked server server to handle in future. --fixed
+not working in termux -- gonna fix later.

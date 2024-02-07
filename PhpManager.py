@@ -54,10 +54,11 @@ class PhpManager:
     def __pidOfServer__(cls): # this must be ran just after starting the new server to get the pid of that particular server.
         validPid = None
         newPids = PhpManager.__getNewPhpPid()
-        if len(newPids) == 1:
-            PhpManager.__pids.extend(newPids)
-            validPid = newPids[0]
-            return validPid
+        if newPids:
+            if len(newPids) == 1:
+                PhpManager.__pids.extend(newPids)
+                validPid = newPids[0]
+                return validPid
     @staticmethod
     def startServer(lhost: str, port: int):
         __key=f"{lhost}:{port}"
