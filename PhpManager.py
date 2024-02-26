@@ -11,11 +11,10 @@ class PhpManager:
     #<<<-------Checking and installing php if not found----------->>>
     if os.name == "posix":
         #<<<----for termux------>>>
-        if os.getcwd.contains("/data/data/com.termux/files") == 0:
+        if "/data/data/com.termux/files" in os.getcwd():
             if not os.path.isfile("/data/data/com.termux/files/usr/bin/php"):
                 try:
                     os.system("apt instal php -y")
-
                 except OSError:
                     sys.stderr.write("coundt find php binary. Please install it manually\n")
                     exit(1)
