@@ -60,7 +60,7 @@ class PhpManager:
                 return validPid
         elif os.name == 'posix':
             try:
-                rawPids = subprocess.check_output("pgrep - af php | awk '{print $1}'", shell = True)
+                rawPids = subprocess.check_output("pgrep -af php | awk '{print $1}'", shell=True)
                 rawPids = rawPids.decode('utf-8')
             except subprocess.CalledProcessError:
                 return validPid
