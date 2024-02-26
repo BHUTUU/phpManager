@@ -78,6 +78,7 @@ class PhpManager:
         for pid in allPids:
             if pid not in PhpManager.__pids:
                 newPid.append(pid)
+                print(pid)
         return newPid
     @classmethod
     def __pidOfServer__(cls):
