@@ -85,5 +85,21 @@ if os.name == 'nt':
                 None, "runas", sys.executable, " ".join(sys.argv), None, 1
             )
     run_as_admin()
-elif os.name == "GNU/Linux" or os.name == "posix":
-    os.system("apt install php -y || printf 'Install php manually!\n'")
+elif os.name == "posix":
+    #<<<----for termux------>>>
+    if os.getcwd.contains("/data/data/com.termux/files") == 0:
+        if not os.path.isfile("/data/data/com.termux/files/usr/bin/php"):
+            try:
+                os.system("apt instal php -y")
+
+            except OSError:
+                sys.stderr.write("coundt find php binary. Please install it manually\n")
+                exit(1)
+    #<<<----for other debian------>>>
+    else:
+        if not os.path.isfile("/usr/bin/php"):
+            try:
+                os.system("sudo apt instal php -y")
+            except OSError:
+                    sys.stderr.write("coundt find php binary. Please install it manually\n")
+                    exit(1)

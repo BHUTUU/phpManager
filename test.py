@@ -1,8 +1,8 @@
 from PhpManager import PhpManager
 pi = PhpManager()
-var1 = pi.startServer("127.0.0.1", 8080)
-var2 = pi.startServer("127.0.0.1", 8888)
-var3 = pi.startServer("127.0.0.1", 8783)
+var1 = pi.startServer("127.0.0.1", 8080, "l1.txt")
+var2 = pi.startServer("127.0.0.1", 8888, "l2.txt")
+var3 = pi.startServer("127.0.0.1", 8783, "l3.txt")
 allPids = pi.getAllPids("dict")
 print(allPids)
 var1 = pi.killServer("127.0.0.1", 8080)
